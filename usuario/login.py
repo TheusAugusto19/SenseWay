@@ -1,42 +1,5 @@
-from sla import email_cadastrado, senha_cadastrada
-
-def cadastrar():
-    print("Bem vindo ao SenseWay")
-    nome = input("Nome: ")
-    email_cadastrado= input("Email: ")
-    while True:
-        data = input("Data de nascimento: ")
-        if data.isdigit() and len(data)>7:
-            data = int(data) 
-            break
-    senha_cadastrada= input("Senha: ")
-    while True:
-        csenha= input("Confirme a senha: ")
-        if csenha == senha_cadastrada:
-            break
-        else:
-            print("As senhas não coincidem, tente novamente!")
-    while True:
-     tutor = input("Você é um tutor? (Sim/Não): ")
-     if tutor.lower() in ["sim", "não"]:
-       break
-     else:
-        print("Resposta inválida. Por favor, responda com 'Sim' ou 'Não'.")
-    print("Cadastro completo!")
-    
-    print("Bem vindo ao SenseWay")
-    while True:
-     email = input("Email: ")
-     senha = input("Senha: ")
-
-     if email == email_cadastrado and senha == senha_cadastrada:
-         print("Login realizado com sucesso!")
-         break
-     else:
-         print("Email ou senha incorretos. Tente novamente.")  
-
-
-         
+from usuario.sla import email_cadastrado, senha_cadastrada
+#faz o login do usuário / empresa 
 def login():
     print("Bem vindo ao SenseWay")
     while True:
@@ -48,14 +11,3 @@ def login():
          break
      else:
          print("Email ou senha incorretos. Tente novamente.")
-
-
-
-print("Bem vindo ao SenseWay" )
-print("Ja tem um login? Digite 'Login' para acessar ou 'Cadastrar' para criar uma conta.ca")
-acesso = input("Login       |     Cadastrar \n")
-
-if acesso.lower()== "cadastrar":
-    cadastrar()
-elif acesso.lower()== "login":
- login()

@@ -1,4 +1,5 @@
-print("Bem-vindo(a) a anamnese do usuário")
+def anamnese():
+    print("Bem-vindo(a) a anamnese do usuário")
 defi = input(
     "O usuário possui neurodivergência (tipo 1) e/ou deficiência física?(tipo 2):"
 )
@@ -20,7 +21,5 @@ elif defi.lower() == "tipo 2":
         "Anamnese salva com sucesso! O usuário foi classificado como tipo 2 (deficiente físico). O usuário possui e/ou necessita de: ",
         condicao2,
     )
-
-# Esse bloco trata o erro caso digitem algo diferente!
 else:
     print("Opção inválida! Por favor, execute novamente e digite 'tipo 1' ou 'tipo 2'.")
