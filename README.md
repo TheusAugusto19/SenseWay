@@ -82,18 +82,3 @@ python main.py
 
 > ⚠️ Instruções de instalação de dependências serão adicionadas conforme o projeto define sua stack definitiva.
 
-## 🗺️ Próximos passos
-
-- [ ] Definir se o projeto será web (Flask/Django) ou desktop (Eel/PyWebview/Tkinter)
-- [ ] Estruturar o banco de dados para armazenar locais e avaliações
-- [ ] Integrar o design do Figma à interface
-- [ ] Implementar cadastro de usuários finais
-- [ ] Implementar sistema de busca/recomendação de locais
-
-## 🤝 Contribuindo
-
-Projeto em desenvolvimento inicial. Sugestões e contribuições são bem-vindas — abra uma *issue* ou *pull request*.
-
-## 📄 Licença
-
-*(definir licença do projeto)*
