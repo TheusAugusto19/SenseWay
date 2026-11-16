@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "usuarioId": 1,
+    "localId": 1,
+    "nome": "João Heitor",
+    "experiencia": "Local muito bom e calmo!!",
+    "acessivel": true,
+    "muitoRuido": false,
+    "nota": 4,
+    "data": "2026-11-10"
+  }
+]

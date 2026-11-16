@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastre seu tutelado e receba sugestões adequadas.">
+    <title>Adicionar tutelado | SenseWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="cabecalho container">
+        <a href="../index.html" class="marca">
+            <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
+            <span class="marca-nome">SenseWay</span>
+        </a>
+        <nav class="nav" aria-label="Navegação principal">
+            <ul>
+                <li><a href="locais.html">Explorar locais</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="perfil.html" aria-current="page">Meu perfil</a></li>
+                <li><a href="../empresa/login.html" class="btn btn--secundario btn--pequeno">Área da empresa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <a href="perfil.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
+
+        <div class="topo-pagina">
+            <h1>Adicionar tutelado</h1>
+            <p>Cadastre seu tutelado e receba sugestões de locais e serviços adequados às suas necessidades de acessibilidade.</p>
+        </div>
+
+        <div class="layout-2-1">
+            <section class="cartao" aria-labelledby="titulo-tutelado">
+                <div class="cartao-acao cartao-acao--sem-recuo">
+                    <span class="quadrado-icone"><span data-icone="mais"></span></span>
+                    <div>
+                        <h2 id="titulo-tutelado">Adicionar nome</h2>
+                        <p class="texto-pequeno">Complete seu perfil para personalizar sua experiência no SenseWay.</p>
+                    </div>
+                </div>
+                <form id="form-tutelado" class="formulario" action="#" method="post">
+                    <div class="campo">
+                        <label for="nome">Nome do tutelado</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
+                    </div>
+                    <p class="mensagem-form" data-mensagem role="alert"></p>
+                    <button type="submit" class="btn btn--primario">Continuar para as preferências <span data-icone="seta-direita"></span></button>
+                </form>
+            </section>
+
+            <aside class="pilha">
+                <section class="cartao">
+                    <h2>Como funciona</h2>
+                    <p class="texto-pequeno">Ao cadastrar seu tutelado, o SenseWay pode sugerir locais e serviços com acessibilidade adequada para a rotina diária.</p>
+                </section>
+                <section class="cartao">
+                    <h2>Próximos passos</h2>
+                    <p class="texto-pequeno">Depois de adicionar o nome, você poderá continuar com as preferências de acessibilidade e receber recomendações personalizadas.</p>
+                </section>
+                <a href="perfil.html" class="btn btn--sair">Sair</a>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="rodape container">
+        <div class="cartao rodape-conteudo">
+            <div>
+                <p class="rodape-marca">SenseWay</p>
+                <p class="texto-suave">Acessibilidade e conforto em cada local.</p>
+                <p class="rodape-nota">SenseWay • Uma comunidade por experiências mais inclusivas.</p>
+            </div>
+            <nav class="rodape-links" aria-label="Links para empresas">
+                <a href="../empresa/cadastro.html">Cadastrar empresa</a>
+                <a href="../empresa/cadastrar-local.html">Cadastrar local</a>
+                <a href="../empresa/mensagens.html" class="btn btn--secundario">Mensagens dos usuários</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/paginas/adicionar-tutelado.js"></script>
+</body>
+</html>

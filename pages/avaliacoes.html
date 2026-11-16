@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acompanhe as experiências que você compartilhou.">
+    <title>Avaliações enviadas | SenseWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="cabecalho container">
+        <a href="../index.html" class="marca">
+            <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
+            <span class="marca-nome">SenseWay</span>
+        </a>
+        <nav class="nav" aria-label="Navegação principal">
+            <ul>
+                <li><a href="locais.html">Explorar locais</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="perfil.html">Meu perfil</a></li>
+                <li><a href="../empresa/login.html" class="btn btn--secundario btn--pequeno">Área da empresa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <a href="perfil.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
+
+        <div class="topo-pagina topo-pagina--acoes">
+            <div>
+                <h1>Avaliações enviadas</h1>
+                <p>Acompanhe as experiências que você compartilhou.</p>
+            </div>
+            <a href="comentario.html" class="btn btn--primario"><span data-icone="mais"></span> Nova avaliação</a>
+        </div>
+
+        <div id="lista-avaliacoes" class="lista-cartoes" aria-live="polite">
+            <p class="carregando">Carregando avaliações...</p>
+        </div>
+
+        <!-- Mostrado quando não há avaliações -->
+        <section id="avaliacoes-vazio" class="cartao estado-vazio" hidden>
+            <div class="quadrado-icone"><span data-icone="traco"></span></div>
+            <h2>Sem avaliações no momento!</h2>
+            <p class="texto-pequeno">Quando você enviar uma avaliação, ela aparecerá aqui para acompanhamento.</p>
+        </section>
+    </main>
+
+    <footer class="rodape container">
+        <div class="cartao rodape-conteudo">
+            <div>
+                <p class="rodape-marca">SenseWay</p>
+                <p class="texto-suave">Acessibilidade e conforto em cada local.</p>
+                <p class="rodape-nota">SenseWay • Uma comunidade por experiências mais inclusivas.</p>
+            </div>
+            <nav class="rodape-links" aria-label="Links para empresas">
+                <a href="../empresa/cadastro.html">Cadastrar empresa</a>
+                <a href="../empresa/cadastrar-local.html">Cadastrar local</a>
+                <a href="../empresa/mensagens.html" class="btn btn--secundario">Mensagens dos usuários</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/paginas/avaliacoes.js"></script>
+</body>
+</html>

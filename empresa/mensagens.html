@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responda às dúvidas dos usuários.">
+    <title>Mensagens dos usuários | SenseWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="barra-empresa">
+        <header class="cabecalho container">
+            <a href="../index.html" class="marca">
+                <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
+                <span class="marca-nome">SenseWay</span>
+            </a>
+            <nav class="nav nav--empresa" aria-label="Navegação da empresa">
+                <ul>
+                    <li><a href="meus-locais.html">Meus locais</a></li>
+                    <li><a href="cadastrar-local.html">Cadastrar local</a></li>
+                    <li><a href="mensagens.html" aria-current="page">Mensagens</a></li>
+                </ul>
+            </nav>
+            <div class="chip-empresa">
+                <span class="avatar-iniciais" data-empresa-iniciais>--</span>
+                <span data-empresa-nome>Carregando...</span>
+            </div>
+        </header>
+    </div>
+
+    <main class="container">
+        <div class="linha-voltar">
+            <a href="meus-locais.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
+            <span class="trilha">SenseWay / Área da empresa</span>
+        </div>
+
+        <div class="topo-pagina topo-pagina--empresa">
+            <span class="sobretitulo">Atendimento da empresa</span>
+            <h1>Mensagens dos usuários</h1>
+            <p>Leia as dúvidas sobre seus locais e responda com informações claras e acolhedoras.</p>
+        </div>
+
+        <div class="chat">
+            <section class="chat-lista" aria-labelledby="titulo-conversas">
+                <div class="chat-lista-topo">
+                    <h2 id="titulo-conversas">Conversas</h2>
+                    <div class="busca">
+                        <span data-icone="busca"></span>
+                        <label for="busca-conversa" class="sr-only">Buscar por nome</label>
+                        <input type="search" id="busca-conversa" placeholder="Buscar por nome">
+                    </div>
+                    <label for="filtro-local" class="sr-only">Filtrar por local</label>
+                    <select id="filtro-local">
+                        <option value="">Todos os locais</option>
+                    </select>
+                </div>
+                <!-- Lista montada pelo js/paginas/mensagens.js -->
+                <div id="lista-conversas" class="conversas">
+                    <p class="carregando carregando--recuo">Carregando conversas...</p>
+                </div>
+                <p class="chat-lista-rodape"><span data-icone="cadeado"></span> As conversas ficam na área da sua empresa.</p>
+            </section>
+
+            <section id="painel-conversa" class="chat-painel" aria-live="polite">
+                <div class="chat-vazio">Escolha uma conversa para ler e responder.</div>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="../js/paginas/mensagens.js"></script>
+</body>
+</html>

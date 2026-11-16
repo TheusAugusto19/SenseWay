@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encontre espaços acessíveis e confortáveis.">
+    <title>Sugestões de locais | SenseWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="cabecalho container">
+        <a href="../index.html" class="marca">
+            <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
+            <span class="marca-nome">SenseWay</span>
+        </a>
+        <nav class="nav" aria-label="Navegação principal">
+            <ul>
+                <li><a href="locais.html" aria-current="page">Explorar locais</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="perfil.html">Meu perfil</a></li>
+                <li><a href="../empresa/login.html" class="btn btn--secundario btn--pequeno">Área da empresa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="topo-pagina">
+            <h1>Sugestões de locais</h1>
+            <p>Encontre espaços acessíveis e confortáveis para você se sentir bem em qualquer lugar.</p>
+        </div>
+
+        <div class="busca" role="search">
+            <span data-icone="busca"></span>
+            <label for="busca-locais" class="sr-only">Pesquisar locais</label>
+            <input type="search" id="busca-locais" placeholder="Pesquisar locais acessíveis...">
+        </div>
+
+        <!-- Os cards são montados pelo js/paginas/locais.js com os dados da api.js -->
+        <div id="lista-locais" class="grade-locais" aria-live="polite">
+            <p class="carregando">Carregando locais...</p>
+        </div>
+    </main>
+
+    <footer class="rodape container">
+        <div class="cartao rodape-conteudo">
+            <div>
+                <p class="rodape-marca">SenseWay</p>
+                <p class="texto-suave">Acessibilidade e conforto em cada local.</p>
+                <p class="rodape-nota">SenseWay • Uma comunidade por experiências mais inclusivas.</p>
+            </div>
+            <nav class="rodape-links" aria-label="Links para empresas">
+                <a href="../empresa/cadastro.html">Cadastrar empresa</a>
+                <a href="../empresa/cadastrar-local.html">Cadastrar local</a>
+                <a href="../empresa/mensagens.html" class="btn btn--secundario">Mensagens dos usuários</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/paginas/locais.js"></script>
+</body>
+</html>

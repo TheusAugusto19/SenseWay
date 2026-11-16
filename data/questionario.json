@@ -1,0 +1,7 @@
+[
+  { "id": "sensibilidadeAuditiva", "texto": "O indivíduo tem sensibilidade auditiva?" },
+  { "id": "preferenciaTextura", "texto": "O indivíduo tem alguma preferência com textura?" },
+  { "id": "sonsAltos", "texto": "O indivíduo tem algum problema com sons altos?" },
+  { "id": "luzesFortes", "texto": "O indivíduo tem algum problema com luzes fortes?" },
+  { "id": "locomocao", "texto": "O indivíduo tem problema com locomoção?" }
+]

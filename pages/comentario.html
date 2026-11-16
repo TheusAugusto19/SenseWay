@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compartilhe sua experiência em um local.">
+    <title>Deixe seu comentário | SenseWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="cabecalho container">
+        <a href="../index.html" class="marca">
+            <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
+            <span class="marca-nome">SenseWay</span>
+        </a>
+        <nav class="nav" aria-label="Navegação principal">
+            <ul>
+                <li><a href="locais.html">Explorar locais</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="perfil.html">Meu perfil</a></li>
+                <li><a href="../empresa/login.html" class="btn btn--secundario btn--pequeno">Área da empresa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <a href="locais.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
+
+        <div class="topo-pagina">
+            <h1>Deixe seu comentário</h1>
+            <p>Compartilhe sua experiência ou envie uma mensagem privada à empresa do local.</p>
+        </div>
+
+        <section class="cartao limite-estreito" aria-label="Formulário de avaliação">
+            <form id="form-avaliacao" class="formulario" action="#" method="post">
+                <div class="campo">
+                    <label for="localId">Local:</label>
+                    <!-- As opções vêm do banco: o valor enviado é o id do local -->
+                    <select id="localId" name="localId" required>
+                        <option value="">Escolha o local</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="experiencia">Experiência:</label>
+                    <textarea id="experiencia" name="experiencia" placeholder="Descreva sua experiência" required></textarea>
+                </div>
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name" required>
+                </div>
+                <fieldset>
+                    <legend>Local acessível:</legend>
+                    <div class="opcoes-radio">
+                        <label><input type="radio" name="acessivel" value="sim" required> Sim</label>
+                        <label><input type="radio" name="acessivel" value="nao"> Não</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Local com muitos ruídos?</legend>
+                    <div class="opcoes-radio">
+                        <label><input type="radio" name="muitoRuido" value="sim" required> Sim</label>
+                        <label><input type="radio" name="muitoRuido" value="nao"> Não</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Nota:</legend>
+                    <!-- Ordem 5 a 1 de propósito: o CSS inverte para pintar as estrelas -->
+                    <div class="estrelas-opcoes">
+                        <input type="radio" id="nota5" name="nota" value="5" required><label for="nota5" title="5 estrelas">★</label>
+                        <input type="radio" id="nota4" name="nota" value="4"><label for="nota4" title="4 estrelas">★</label>
+                        <input type="radio" id="nota3" name="nota" value="3"><label for="nota3" title="3 estrelas">★</label>
+                        <input type="radio" id="nota2" name="nota" value="2"><label for="nota2" title="2 estrelas">★</label>
+                        <input type="radio" id="nota1" name="nota" value="1"><label for="nota1" title="1 estrela">★</label>
+                    </div>
+                </fieldset>
+                <p class="mensagem-form" data-mensagem role="alert"></p>
+                <button type="submit" class="btn btn--primario btn--bloco">Enviar avaliação</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape container">
+        <div class="cartao rodape-conteudo">
+            <div>
+                <p class="rodape-marca">SenseWay</p>
+                <p class="texto-suave">Acessibilidade e conforto em cada local.</p>
+                <p class="rodape-nota">SenseWay • Uma comunidade por experiências mais inclusivas.</p>
+            </div>
+            <nav class="rodape-links" aria-label="Links para empresas">
+                <a href="../empresa/cadastro.html">Cadastrar empresa</a>
+                <a href="../empresa/cadastrar-local.html">Cadastrar local</a>
+                <a href="../empresa/mensagens.html" class="btn btn--secundario">Mensagens dos usuários</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/paginas/comentario.js"></script>
+</body>
+</html>

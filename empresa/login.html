@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área da empresa no SenseWay.">
+    <title>Acesse sua empresa | SenseWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="barra-empresa">
+        <header class="cabecalho container">
+            <a href="../index.html" class="marca">
+                <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
+                <span class="marca-nome">SenseWay</span>
+            </a>
+            <nav class="nav nav--empresa" aria-label="Navegação da empresa">
+                <ul>
+                    <li><a href="login.html" aria-current="page">Área da empresa</a></li>
+                </ul>
+            </nav>
+            <span></span>
+        </header>
+    </div>
+
+    <main class="container">
+        <p class="trilha espaco-abaixo">SenseWay / Área da empresa</p>
+
+        <div class="layout-acesso">
+            <section class="painel-empresa" aria-labelledby="titulo-painel">
+                <span class="sobretitulo"><span data-icone="predio"></span> SenseWay para empresas</span>
+                <h2 id="titulo-painel">Seu espaço.<br>Suas informações.<br>Um só lugar.</h2>
+                <p class="texto-suave">Acesse sua área para cuidar dos locais cadastrados e continuar as conversas com os usuários.</p>
+                <ul class="lista-recursos">
+                    <li>
+                        <span class="quadrado-icone quadrado-icone--branco"><span data-icone="predio"></span></span>
+                        <span><strong>Apresente seu espaço</strong><span>Publique uma descrição e uma foto do local.</span></span>
+                    </li>
+                    <li>
+                        <span class="quadrado-icone quadrado-icone--branco"><span data-icone="editar"></span></span>
+                        <span><strong>Mantenha as informações claras</strong><span>Edite os detalhes sempre que precisar.</span></span>
+                    </li>
+                    <li>
+                        <span class="quadrado-icone quadrado-icone--branco"><span data-icone="baloes"></span></span>
+                        <span><strong>Converse com os usuários</strong><span>Responda às dúvidas em uma caixa de mensagens.</span></span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="form-empresa" aria-labelledby="titulo-acesso">
+                <span class="sobretitulo">Bem-vindo de volta</span>
+                <h1 id="titulo-acesso">Acesse sua empresa</h1>
+                <p class="texto-suave">Entre com o e-mail e a senha da sua conta.</p>
+                <form id="form-login-empresa" class="formulario" action="#" method="post">
+                    <div class="campo campo--branco">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="contato@seulocal.com.br" autocomplete="email" required>
+                    </div>
+                    <div class="campo campo--branco">
+                        <label for="senha">Senha</label>
+                        <div class="campo-senha">
+                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
+                            <button type="button" data-alternar-senha="senha" aria-label="Mostrar senha"><span data-icone="olho-fechado"></span></button>
+                        </div>
+                    </div>
+                    <p class="alinhar-direita"><a href="../pages/nova-senha.html" class="link-pequeno">Esqueci minha senha</a></p>
+                    <p class="mensagem-form" data-mensagem role="alert"></p>
+                    <button type="submit" class="btn btn--primario btn--bloco"><span data-icone="seta-direita"></span> Entrar</button>
+                    <p class="texto-suave centralizado">Ainda não tem conta? <a href="cadastro.html"><strong>Cadastrar empresa</strong></a></p>
+                    <hr class="divisor">
+                    <p class="aviso"><span data-icone="info"></span> <span>Esta área é para empresas. Para explorar locais, <a href="../index.html">volte ao site do SenseWay</a>.</span></p>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="../js/paginas/empresa-login.js"></script>
+</body>
+</html>

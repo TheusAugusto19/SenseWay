@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "empresaId": 1,
+    "nome": "Vila Jambolão",
+    "categoria": "Hospedagem",
+    "cidade": "Botucatu, SP",
+    "resumo": "Hospedagem em meio à natureza, no bairro Demétria, em Botucatu (SP). Chalés com cozinha e varanda.",
+    "descricao": "A Vila Jambolão é um espaço de hospedagem em meio à natureza localizado no famoso bairro Demétria, em Botucatu (SP). O local oferece 4 chalés aconchegantes e equipados com cozinha, ideais para casais ou pequenas famílias que buscam relaxar e curtir a região da Cuesta.",
+    "foto": "img/locais/vila-jambolao.jpg",
+    "recursos": ["Ambiente silencioso", "Iluminação suave"],
+    "publicado": true
+  },
+  {
+    "id": 2,
+    "empresaId": 2,
+    "nome": "Café Aurora",
+    "categoria": "Alimentação",
+    "cidade": "Botucatu, SP",
+    "resumo": "Café calmo e acolhedor, com iluminação suave e pouco ruído.",
+    "descricao": "O Café Aurora oferece um ambiente calmo e acolhedor, com iluminação suave e pouco ruído. O espaço possui acesso adaptado para cadeirantes e áreas mais silenciosas para pessoas sensíveis a estímulos.",
+    "foto": "img/locais/cafe-aurora.jpg",
+    "recursos": ["Acesso para cadeirantes", "Ambiente silencioso", "Iluminação suave"],
+    "publicado": true
+  },
+  {
+    "id": 3,
+    "empresaId": 3,
+    "nome": "Praça Harmonia",
+    "categoria": "Lazer",
+    "cidade": "Botucatu, SP",
+    "resumo": "Praça com caminhos acessíveis, bancos adaptados e baixa movimentação sonora.",
+    "descricao": "A Praça Harmonia conta com caminhos acessíveis, bancos adaptados e ambiente tranquilo para lazer ao ar livre. O local possui baixa movimentação sonora e fácil circulação para pessoas com mobilidade reduzida.",
+    "foto": "img/locais/praca-harmonia.jpg",
+    "recursos": ["Caminhos acessíveis", "Bancos adaptados", "Ambiente silencioso"],
+    "publicado": true
+  },
+  {
+    "id": 4,
+    "empresaId": 4,
+    "nome": "Biblioteca NovaMente",
+    "categoria": "Cultura",
+    "cidade": "Botucatu, SP",
+    "resumo": "Biblioteca com espaços silenciosos e organizados, ideal para foco e conforto sensorial.",
+    "descricao": "A Biblioteca NovaMente oferece espaços silenciosos e organizados, ideais para foco e conforto sensorial. O ambiente possui acessibilidade física, áreas reservadas e iluminação confortável.",
+    "foto": "img/locais/biblioteca-novamente.jpg",
+    "recursos": ["Acesso para cadeirantes", "Ambiente silencioso", "Iluminação suave"],
+    "publicado": true
+  },
+  {
+    "id": 5,
+    "empresaId": 5,
+    "nome": "Shopping Nexus",
+    "categoria": "Comércio",
+    "cidade": "Botucatu, SP",
+    "resumo": "Shopping com elevadores acessíveis, banheiros adaptados e sinalização clara.",
+    "descricao": "O Shopping Nexus possui elevadores acessíveis, banheiros adaptados e sinalização clara para facilitar a circulação de todos os visitantes.",
+    "foto": "img/locais/shopping-nexus.jpg",
+    "recursos": ["Elevador", "Banheiro adaptado", "Sinalização acessível"],
+    "publicado": true
+  }
+]

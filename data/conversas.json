@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "localId": 1,
+    "usuario": { "id": 2, "nome": "Mariana Costa" },
+    "mensagens": [
+      {
+        "autor": "usuario",
+        "texto": "Olá! Estou planejando uma visita com minha mãe, que tem mobilidade reduzida. O caminho até o chalé tem degraus? Vocês podem me contar como é o acesso?",
+        "dataHora": "2026-10-09T10:42:00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "localId": 1,
+    "usuario": { "id": 3, "nome": "Rafael Lima" },
+    "mensagens": [
+      {
+        "autor": "usuario",
+        "texto": "Boa tarde! Os chalés têm iluminação forte à noite? Meu filho é sensível a luzes intensas.",
+        "dataHora": "2026-10-08T15:10:00"
+      },
+      {
+        "autor": "empresa",
+        "texto": "Olá, Rafael! As luzes dos chalés são amareladas e todas têm controle de intensidade. A área externa tem iluminação baixa.",
+        "dataHora": "2026-10-08T16:02:00"
+      },
+      {
+        "autor": "usuario",
+        "texto": "Obrigado pelas informações sobre a iluminação.",
+        "dataHora": "2026-10-08T16:20:00"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "localId": 1,
+    "usuario": { "id": 4, "nome": "Ana Souza" },
+    "mensagens": [
+      {
+        "autor": "usuario",
+        "texto": "Qual é o horário de chegada ao local?",
+        "dataHora": "2026-10-07T09:30:00"
+      }
+    ]
+  }
+]

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gerencie os locais da sua empresa.">
+    <title>Meus locais | SenseWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="barra-empresa">
+        <header class="cabecalho container">
+            <a href="../index.html" class="marca">
+                <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
+                <span class="marca-nome">SenseWay</span>
+            </a>
+            <nav class="nav nav--empresa" aria-label="Navegação da empresa">
+                <ul>
+                    <li><a href="meus-locais.html" aria-current="page">Meus locais</a></li>
+                    <li><a href="cadastrar-local.html">Cadastrar local</a></li>
+                    <li><a href="mensagens.html">Mensagens</a></li>
+                </ul>
+            </nav>
+            <div class="chip-empresa">
+                <span class="avatar-iniciais" data-empresa-iniciais>--</span>
+                <span data-empresa-nome>Carregando...</span>
+            </div>
+        </header>
+    </div>
+
+    <main class="container">
+        <div class="linha-voltar">
+            <a href="login.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
+            <span class="trilha">SenseWay / Área da empresa</span>
+        </div>
+
+        <div class="topo-pagina topo-pagina--empresa topo-pagina--acoes">
+            <div>
+                <span class="sobretitulo">Painel da empresa</span>
+                <h1>Meus locais</h1>
+                <p>Gerencie as informações dos seus espaços e converse com os usuários.</p>
+            </div>
+            <a href="cadastrar-local.html" class="btn btn--primario"><span data-icone="mais"></span> Cadastrar outro local</a>
+        </div>
+
+        <!-- Aparece depois de publicar (meus-locais.html?publicado=1) -->
+        <p id="alerta-publicado" class="alerta alerta--sucesso" role="status" hidden>
+            <span data-icone="check-circulo"></span> Local publicado. Você pode editar as informações a qualquer momento.
+        </p>
+
+        <div class="layout-2-1">
+            <div id="lista-locais-empresa" class="lista-cartoes" aria-live="polite">
+                <p class="carregando">Carregando seus locais...</p>
+            </div>
+
+            <aside class="pilha">
+                <section class="painel-mensagens" aria-labelledby="titulo-msgs">
+                    <span data-icone="baloes" class="icone-marca"></span>
+                    <h2 id="titulo-msgs">Mensagens dos usuários</h2>
+                    <p class="texto-pequeno">Acompanhe as perguntas sobre seu local e ajude as pessoas a planejar a visita.</p>
+                    <div id="ultima-mensagem" class="previa-mensagem">Carregando...</div>
+                    <a href="mensagens.html" class="btn btn--primario btn--bloco"><span data-icone="seta-direita"></span> Abrir caixa de mensagens</a>
+                </section>
+                <section class="cartao">
+                    <h2>Seu cadastro, sempre atualizado</h2>
+                    <p class="texto-pequeno">Revise a descrição e a foto sempre que algo mudar no local. Informações claras ajudam as pessoas a planejar a visita com segurança.</p>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <script type="module" src="../js/paginas/meus-locais.js"></script>
+</body>
+</html>

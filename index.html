@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encontre locais acessíveis e confortáveis para você se sentir bem.">
+    <title>SenseWay — lugares para se sentir bem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="cabecalho container">
+        <a href="index.html" class="marca">
+            <img src="img/logoSenseWay.jpeg" alt="" class="marca-logo">
+            <span class="marca-nome">SenseWay</span>
+        </a>
+    </header>
+
+    <main class="container">
+        <p class="titulo-secundario">SenseWay — lugares para se sentir bem</p>
+        <p class="texto-suave">Um mapa mais inclusivo começa com você.</p>
+
+        <section class="hero painel-lilas" aria-labelledby="titulo-inicio">
+            <div class="hero-texto">
+                <span class="sobretitulo">Acessibilidade para todos</span>
+                <h1 id="titulo-inicio">Bem-vindo ao SenseWay!</h1>
+                <p>Encontre locais acessíveis e confortáveis para você se sentir bem em qualquer lugar.</p>
+                <div class="grupo-botoes">
+                    <a href="pages/login.html" class="btn btn--primario">Entrar</a>
+                    <a href="pages/cadastro.html" class="btn btn--secundario">Cadastrar</a>
+                </div>
+            </div>
+
+            <aside class="cartao hero-cartao" aria-labelledby="titulo-empresa">
+                <img src="img/logoSenseWay.jpeg" alt="Logo do SenseWay" class="hero-logo">
+                <h2 id="titulo-empresa">Seu local pode fazer parte.</h2>
+                <p class="texto-suave">Cadastre sua empresa, apresente seu espaço com descrição e foto e receba mensagens dos usuários.</p>
+                <a href="empresa/cadastro.html" class="btn btn--primario btn--bloco">Cadastrar minha empresa</a>
+            </aside>
+        </section>
+
+        <section class="destaques" aria-label="O que você pode fazer no SenseWay">
+            <a href="pages/locais.html" class="cartao">
+                <h2>Encontre seu próximo lugar</h2>
+                <p class="texto-suave">Descubra espaços com informações sobre acessibilidade e conforto sensorial.</p>
+            </a>
+            <a href="pages/comentario.html" class="cartao">
+                <h2>Compartilhe sua experiência</h2>
+                <p class="texto-suave">Avalie os locais que você visitou e contribua com a comunidade.</p>
+            </a>
+            <a href="pages/perfil.html" class="cartao">
+                <h2>Personalize suas sugestões</h2>
+                <p class="texto-suave">Cadastre seu perfil e as necessidades do seu tutelado.</p>
+            </a>
+        </section>
+    </main>
+
+    <footer class="rodape container">
+        <div class="cartao rodape-conteudo">
+            <div>
+                <p class="rodape-marca">SenseWay</p>
+                <p class="texto-suave">Acessibilidade e conforto em cada local.</p>
+                <p class="rodape-nota">SenseWay • Uma comunidade por experiências mais inclusivas.</p>
+            </div>
+            <nav class="rodape-links" aria-label="Links para empresas">
+                <a href="empresa/cadastro.html">Cadastrar empresa</a>
+                <a href="empresa/cadastrar-local.html">Cadastrar local</a>
+                <a href="empresa/mensagens.html" class="btn btn--secundario">Mensagens dos usuários</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="js/ui.js"></script>
+</body>
+</html>
