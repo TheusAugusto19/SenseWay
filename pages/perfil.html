@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' http://localhost:3000; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="description" content="Seus dados e sua experiência no SenseWay.">
     <title>Meu perfil | SenseWay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,85 +11,149 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <header class="cabecalho container">
-        <a href="../index.html" class="marca">
-            <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
-            <span class="marca-nome">SenseWay</span>
-        </a>
-        <nav class="nav" aria-label="Navegação principal">
-            <ul>
-                <li><a href="locais.html">Explorar locais</a></li>
-                <li><a href="favoritos.html">Favoritos</a></li>
-                <li><a href="perfil.html" aria-current="page">Meu perfil</a></li>
-                <li><a href="../empresa/login.html" class="btn btn--secundario btn--pequeno">Área da empresa</a></li>
-            </ul>
-        </nav>
-    </header>
-
+<body data-pagina="perfil" data-area="usuario" data-nav="perfil">
     <main class="container">
-        <a href="locais.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
+        <!-- perfil.html | #editar | #tutelado -->
+        <div data-modo="perfil" data-titulo="Meu perfil">
+            <a href="locais.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
 
-        <div class="topo-pagina">
-            <h1>Meu perfil</h1>
-            <p>Seus dados e sua experiência no SenseWay.</p>
+            <div class="topo-pagina">
+                <h1>Meu perfil</h1>
+                <p>Seus dados e sua experiência no SenseWay.</p>
+            </div>
+
+            <div class="perfil-grade">
+                <section class="cartao" aria-label="Seus dados">
+                    <div class="avatar" id="perfil-avatar"><span data-icone="usuario"></span></div>
+                    <!-- Preenchido pelo js/app.js -->
+                    <dl id="dados-perfil" class="dados-perfil">
+                        <dt>Nome:</dt>
+                        <dd data-campo="nome" data-carregando>Carregando...</dd>
+                        <dt>E-mail:</dt>
+                        <dd data-campo="email">...</dd>
+                        <dt>Data de nascimento:</dt>
+                        <dd data-campo="dataNascimento">...</dd>
+                        <dt>Tutor:</dt>
+                        <dd data-campo="tutor">...</dd>
+                    </dl>
+                </section>
+
+                <section class="cartao perfil-acoes" aria-label="Ações do perfil">
+                    <a href="questionario.html" class="link-destaque">Faça seu cadastro personalizado<br>Clique aqui!</a>
+                    <a href="#editar" class="btn btn--primario btn--grande">Editar</a>
+                    <a href="avaliacoes.html" class="btn btn--secundario btn--bloco">Minhas avaliações</a>
+                    <hr class="divisor">
+                    <button type="button" id="botao-sair" class="btn btn--sair">Sair</button>
+                </section>
+
+                <div class="pilha">
+                    <a href="#tutelado" class="cartao cartao-acao">
+                        <span class="quadrado-icone"><span data-icone="mais"></span></span>
+                        <div>
+                            <h2>Adicionar tutelado</h2>
+                            <p class="texto-pequeno">Complete seu perfil para personalizar sua experiência no SenseWay.</p>
+                        </div>
+                    </a>
+                    <section id="cartao-tutelados" class="cartao" hidden>
+                        <h2>Seus tutelados</h2>
+                        <ul id="lista-tutelados" class="lista-tutelados"></ul>
+                    </section>
+                </div>
+            </div>
         </div>
 
-        <div class="perfil-grade">
-            <section class="cartao" aria-label="Seus dados">
-                <div class="avatar" id="perfil-avatar"><span data-icone="usuario"></span></div>
-                <!-- Preenchido pelo js/paginas/perfil.js -->
-                <dl id="dados-perfil" class="dados-perfil">
-                    <dt>Nome:</dt>
-                    <dd data-campo="nome">Carregando...</dd>
-                    <dt>E-mail:</dt>
-                    <dd data-campo="email">...</dd>
-                    <dt>Data de nascimento:</dt>
-                    <dd data-campo="dataNascimento">...</dd>
-                    <dt>Tutor:</dt>
-                    <dd data-campo="tutor">...</dd>
-                </dl>
-            </section>
+        <div data-modo="editar" data-titulo="Editar perfil" hidden>
+            <a href="#perfil" class="link-voltar"><span data-icone="seta-esquerda"></span> Voltar</a>
 
-            <section class="cartao perfil-acoes" aria-label="Ações do perfil">
-                <a href="questionario.html" class="link-destaque">Faça seu cadastro personalizado<br>Clique aqui!</a>
-                <a href="editar-perfil.html" class="btn btn--primario btn--grande">Editar</a>
-                <a href="avaliacoes.html" class="btn btn--secundario btn--bloco">Minhas avaliações</a>
-                <hr class="divisor">
-                <button type="button" id="botao-sair" class="btn btn--sair">Sair</button>
-            </section>
+            <div class="topo-pagina">
+                <h1>Editar perfil</h1>
+                <p>Atualize seus dados pessoais e preferências.</p>
+            </div>
 
-            <div class="pilha">
-                <a href="adicionar-tutelado.html" class="cartao cartao-acao">
-                    <span class="quadrado-icone"><span data-icone="mais"></span></span>
-                    <div>
-                        <h2>Adicionar tutelado</h2>
-                        <p class="texto-pequeno">Complete seu perfil para personalizar sua experiência no SenseWay.</p>
-                    </div>
-                </a>
-                <section id="cartao-tutelados" class="cartao" hidden>
-                    <h2>Seus tutelados</h2>
-                    <ul id="lista-tutelados" class="lista-tutelados"></ul>
+            <div class="perfil-grade perfil-grade--duas">
+                <section class="cartao foto-perfil" aria-labelledby="titulo-foto">
+                    <div class="avatar avatar--grande" id="previa-avatar"><span data-icone="usuario"></span></div>
+                    <h2 id="titulo-foto">Foto do perfil</h2>
+                    <p class="texto-suave">Mantenha seu avatar visível e reconhecível.</p>
+                    <label for="foto" class="btn btn--secundario btn--pequeno espaco-acima">Trocar foto</label>
+                    <input type="file" id="foto" name="foto" accept="image/*" class="sr-only" form="form-editar-perfil">
                 </section>
+
+                <section class="cartao" aria-labelledby="titulo-dados">
+                    <h2 id="titulo-dados" class="titulo-cartao">Dados pessoais</h2>
+                    <form id="form-editar-perfil" class="formulario" action="#" method="post">
+                        <div class="campos-duplos">
+                            <div class="campo">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name" required>
+                            </div>
+                            <div class="campo">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" autocomplete="email" required>
+                            </div>
+                        </div>
+                        <div class="campos-duplos">
+                            <div class="campo">
+                                <label for="dataNascimento">Data de nascimento</label>
+                                <input type="date" id="dataNascimento" name="dataNascimento">
+                            </div>
+                        </div>
+                        <fieldset>
+                            <legend>Tutor</legend>
+                            <div class="opcoes-radio">
+                                <label><input type="radio" name="tutor" value="sim"> Sim</label>
+                                <label><input type="radio" name="tutor" value="nao"> Não</label>
+                            </div>
+                        </fieldset>
+                        <p class="mensagem-form" data-mensagem role="alert"></p>
+                        <button type="submit" class="btn btn--primario btn--largo">Salvar</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <div data-modo="tutelado" data-titulo="Adicionar tutelado" hidden>
+            <a href="#perfil" class="link-voltar"><span data-icone="seta-esquerda"></span> Voltar</a>
+
+            <div class="topo-pagina">
+                <h1>Adicionar tutelado</h1>
+                <p>Cadastre seu tutelado e receba sugestões de locais e serviços adequados às suas necessidades de acessibilidade.</p>
+            </div>
+
+            <div class="layout-2-1">
+                <section class="cartao" aria-labelledby="titulo-tutelado">
+                    <div class="cartao-acao cartao-acao--sem-recuo">
+                        <span class="quadrado-icone"><span data-icone="mais"></span></span>
+                        <div>
+                            <h2 id="titulo-tutelado">Adicionar nome</h2>
+                            <p class="texto-pequeno">Complete seu perfil para personalizar sua experiência no SenseWay.</p>
+                        </div>
+                    </div>
+                    <form id="form-tutelado" class="formulario" action="#" method="post">
+                        <div class="campo">
+                            <label for="nome-tutelado">Nome do tutelado</label>
+                            <input type="text" id="nome-tutelado" name="nome" placeholder="Digite o nome" required>
+                        </div>
+                        <p class="mensagem-form" data-mensagem role="alert"></p>
+                        <button type="submit" class="btn btn--primario">Continuar para as preferências <span data-icone="seta-direita"></span></button>
+                    </form>
+                </section>
+
+                <aside class="pilha">
+                    <section class="cartao">
+                        <h2>Como funciona</h2>
+                        <p class="texto-pequeno">Ao cadastrar seu tutelado, o SenseWay pode sugerir locais e serviços com acessibilidade adequada para a rotina diária.</p>
+                    </section>
+                    <section class="cartao">
+                        <h2>Próximos passos</h2>
+                        <p class="texto-pequeno">Depois de adicionar o nome, você poderá continuar com as preferências de acessibilidade e receber recomendações personalizadas.</p>
+                    </section>
+                    <a href="#perfil" class="btn btn--sair">Sair</a>
+                </aside>
             </div>
         </div>
     </main>
 
-    <footer class="rodape container">
-        <div class="cartao rodape-conteudo">
-            <div>
-                <p class="rodape-marca">SenseWay</p>
-                <p class="texto-suave">Acessibilidade e conforto em cada local.</p>
-                <p class="rodape-nota">SenseWay • Uma comunidade por experiências mais inclusivas.</p>
-            </div>
-            <nav class="rodape-links" aria-label="Links para empresas">
-                <a href="../empresa/cadastro.html">Cadastrar empresa</a>
-                <a href="../empresa/cadastrar-local.html">Cadastrar local</a>
-                <a href="../empresa/mensagens.html" class="btn btn--secundario">Mensagens dos usuários</a>
-            </nav>
-        </div>
-    </footer>
-
-    <script type="module" src="../js/paginas/perfil.js"></script>
+    <script type="module" src="../js/app.js"></script>
 </body>
 </html>

@@ -3,29 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cadastre sua empresa no SenseWay.">
-    <title>Cadastre sua empresa | SenseWay</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' http://localhost:3000; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="description" content="Área da empresa no SenseWay.">
+    <title>Acesse sua empresa | SenseWay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <div class="barra-empresa">
-        <header class="cabecalho container">
-            <a href="../index.html" class="marca">
-                <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
-                <span class="marca-nome">SenseWay</span>
-            </a>
-            <nav class="nav nav--empresa" aria-label="Navegação da empresa">
-                <ul>
-                    <li><a href="login.html" aria-current="page">Área da empresa</a></li>
-                </ul>
-            </nav>
-            <a href="login.html" class="btn btn--secundario btn--pequeno">Acessar minha conta</a>
-        </header>
-    </div>
-
+<body data-pagina="empresa-acesso" data-area="empresa-acesso">
     <main class="container">
         <p class="trilha espaco-abaixo">SenseWay / Área da empresa</p>
 
@@ -33,7 +19,7 @@
             <section class="painel-empresa" aria-labelledby="titulo-painel">
                 <span class="sobretitulo"><span data-icone="predio"></span> SenseWay para empresas</span>
                 <h2 id="titulo-painel">Seu espaço faz parte de um caminho mais inclusivo.</h2>
-                <p class="texto-suave">Compartilhe informações que ajudam as pessoas a conhecer seu local e planejar a visita.</p>
+                <p class="texto-suave">Compartilhe informações que ajudam as pessoas a conhecer seu local, planejar a visita e conversar com você.</p>
                 <ul class="lista-recursos">
                     <li>
                         <span class="quadrado-icone quadrado-icone--branco"><span data-icone="predio"></span></span>
@@ -50,7 +36,33 @@
                 </ul>
             </section>
 
-            <section class="form-empresa" aria-labelledby="titulo-conta">
+            <!-- acesso.html = entrar | acesso.html#cadastro = criar conta -->
+            <section class="form-empresa" data-modo="entrar" data-titulo="Acesse sua empresa" aria-labelledby="titulo-acesso">
+                <span class="sobretitulo">Bem-vindo de volta</span>
+                <h1 id="titulo-acesso">Acesse sua empresa</h1>
+                <p class="texto-suave">Entre com o e-mail e a senha da sua conta.</p>
+                <form id="form-login-empresa" class="formulario" action="#" method="post">
+                    <div class="campo campo--branco">
+                        <label for="email-login">E-mail</label>
+                        <input type="email" id="email-login" name="email" placeholder="contato@seulocal.com.br" autocomplete="email" required>
+                    </div>
+                    <div class="campo campo--branco">
+                        <label for="senha-login">Senha</label>
+                        <div class="campo-senha">
+                            <input type="password" id="senha-login" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
+                            <button type="button" data-alternar-senha="senha-login" aria-label="Mostrar senha"><span data-icone="olho-fechado"></span></button>
+                        </div>
+                    </div>
+                    <p class="alinhar-direita"><a href="../pages/acesso.html#nova-senha" class="link-pequeno">Esqueci minha senha</a></p>
+                    <p class="mensagem-form" data-mensagem role="alert"></p>
+                    <button type="submit" class="btn btn--primario btn--bloco"><span data-icone="seta-direita"></span> Entrar</button>
+                    <p class="texto-suave centralizado">Ainda não tem conta? <a href="#cadastro"><strong>Cadastrar empresa</strong></a></p>
+                    <hr class="divisor">
+                    <p class="aviso"><span data-icone="info"></span> <span>Esta área é para empresas. Para explorar locais, <a href="../index.html">volte ao site do SenseWay</a>.</span></p>
+                </form>
+            </section>
+
+            <section class="form-empresa" data-modo="cadastro" data-titulo="Cadastre sua empresa" aria-labelledby="titulo-conta" hidden>
                 <span class="sobretitulo">Comece por aqui</span>
                 <h1 id="titulo-conta">Crie sua conta</h1>
                 <p class="texto-suave">Cadastre sua empresa para apresentar seu local no SenseWay.</p>
@@ -72,15 +84,15 @@
                         </div>
                         <p class="dica">Use pelo menos 8 caracteres.</p>
                     </div>
-                    <p class="texto-legal">Ao criar sua conta, você concorda com os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a>.</p>
+                    <p class="texto-legal">Ao criar sua conta, você concorda com os <a href="#termos">Termos de uso</a> e a <a href="#privacidade">Política de privacidade</a>.</p>
                     <p class="mensagem-form" data-mensagem role="alert"></p>
                     <button type="submit" class="btn btn--primario btn--bloco"><span data-icone="seta-direita"></span> Criar conta</button>
-                    <p class="texto-suave centralizado">Já tenho conta. <a href="login.html"><strong>Acessar minha conta</strong></a></p>
+                    <p class="texto-suave centralizado">Já tenho conta. <a href="#entrar"><strong>Acessar minha conta</strong></a></p>
                 </form>
             </section>
         </div>
     </main>
 
-    <script type="module" src="../js/paginas/empresa-cadastro.js"></script>
+    <script type="module" src="../js/app.js"></script>
 </body>
 </html>

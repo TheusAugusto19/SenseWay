@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' http://localhost:3000; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="description" content="Responda às dúvidas dos usuários.">
     <title>Mensagens dos usuários | SenseWay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,27 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <div class="barra-empresa">
-        <header class="cabecalho container">
-            <a href="../index.html" class="marca">
-                <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
-                <span class="marca-nome">SenseWay</span>
-            </a>
-            <nav class="nav nav--empresa" aria-label="Navegação da empresa">
-                <ul>
-                    <li><a href="meus-locais.html">Meus locais</a></li>
-                    <li><a href="cadastrar-local.html">Cadastrar local</a></li>
-                    <li><a href="mensagens.html" aria-current="page">Mensagens</a></li>
-                </ul>
-            </nav>
-            <div class="chip-empresa">
-                <span class="avatar-iniciais" data-empresa-iniciais>--</span>
-                <span data-empresa-nome>Carregando...</span>
-            </div>
-        </header>
-    </div>
-
+<body data-pagina="mensagens" data-area="empresa" data-nav="mensagens">
     <main class="container">
         <div class="linha-voltar">
             <a href="meus-locais.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
@@ -57,7 +38,7 @@
                         <option value="">Todos os locais</option>
                     </select>
                 </div>
-                <!-- Lista montada pelo js/paginas/mensagens.js -->
+                <!-- Lista montada pelo js/app.js -->
                 <div id="lista-conversas" class="conversas">
                     <p class="carregando carregando--recuo">Carregando conversas...</p>
                 </div>
@@ -70,6 +51,6 @@
         </div>
     </main>
 
-    <script type="module" src="../js/paginas/mensagens.js"></script>
+    <script type="module" src="../js/app.js"></script>
 </body>
 </html>

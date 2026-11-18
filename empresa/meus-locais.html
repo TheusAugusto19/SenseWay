@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' http://localhost:3000; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="description" content="Gerencie os locais da sua empresa.">
     <title>Meus locais | SenseWay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,68 +11,145 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <div class="barra-empresa">
-        <header class="cabecalho container">
-            <a href="../index.html" class="marca">
-                <img src="../img/logoSenseWay.jpeg" alt="" class="marca-logo">
-                <span class="marca-nome">SenseWay</span>
-            </a>
-            <nav class="nav nav--empresa" aria-label="Navegação da empresa">
-                <ul>
-                    <li><a href="meus-locais.html" aria-current="page">Meus locais</a></li>
-                    <li><a href="cadastrar-local.html">Cadastrar local</a></li>
-                    <li><a href="mensagens.html">Mensagens</a></li>
-                </ul>
-            </nav>
-            <div class="chip-empresa">
-                <span class="avatar-iniciais" data-empresa-iniciais>--</span>
-                <span data-empresa-nome>Carregando...</span>
-            </div>
-        </header>
-    </div>
-
+<body data-pagina="meus-locais" data-area="empresa" data-nav="meus-locais">
     <main class="container">
-        <div class="linha-voltar">
-            <a href="login.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
-            <span class="trilha">SenseWay / Área da empresa</span>
-        </div>
-
-        <div class="topo-pagina topo-pagina--empresa topo-pagina--acoes">
-            <div>
-                <span class="sobretitulo">Painel da empresa</span>
-                <h1>Meus locais</h1>
-                <p>Gerencie as informações dos seus espaços e converse com os usuários.</p>
-            </div>
-            <a href="cadastrar-local.html" class="btn btn--primario"><span data-icone="mais"></span> Cadastrar outro local</a>
-        </div>
-
-        <!-- Aparece depois de publicar (meus-locais.html?publicado=1) -->
-        <p id="alerta-publicado" class="alerta alerta--sucesso" role="status" hidden>
-            <span data-icone="check-circulo"></span> Local publicado. Você pode editar as informações a qualquer momento.
-        </p>
-
-        <div class="layout-2-1">
-            <div id="lista-locais-empresa" class="lista-cartoes" aria-live="polite">
-                <p class="carregando">Carregando seus locais...</p>
+        <!-- meus-locais.html | #cadastro (?id=1#cadastro edita) -->
+        <div data-modo="lista" data-titulo="Meus locais" data-nav="meus-locais">
+            <div class="linha-voltar">
+                <a href="acesso.html" class="link-voltar" data-voltar><span data-icone="seta-esquerda"></span> Voltar</a>
+                <span class="trilha">SenseWay / Área da empresa</span>
             </div>
 
-            <aside class="pilha">
-                <section class="painel-mensagens" aria-labelledby="titulo-msgs">
-                    <span data-icone="baloes" class="icone-marca"></span>
-                    <h2 id="titulo-msgs">Mensagens dos usuários</h2>
-                    <p class="texto-pequeno">Acompanhe as perguntas sobre seu local e ajude as pessoas a planejar a visita.</p>
-                    <div id="ultima-mensagem" class="previa-mensagem">Carregando...</div>
-                    <a href="mensagens.html" class="btn btn--primario btn--bloco"><span data-icone="seta-direita"></span> Abrir caixa de mensagens</a>
+            <div class="topo-pagina topo-pagina--empresa topo-pagina--acoes">
+                <div>
+                    <span class="sobretitulo">Painel da empresa</span>
+                    <h1>Meus locais</h1>
+                    <p>Gerencie as informações dos seus espaços e converse com os usuários.</p>
+                </div>
+                <a href="#cadastro" class="btn btn--primario"><span data-icone="mais"></span> Cadastrar outro local</a>
+            </div>
+
+            <!-- Aparece depois de publicar (meus-locais.html?publicado=1) -->
+            <p id="alerta-publicado" class="alerta alerta--sucesso" role="status" hidden>
+                <span data-icone="check-circulo"></span> Local publicado. Você pode editar as informações a qualquer momento.
+            </p>
+
+            <div class="layout-2-1">
+                <div id="lista-locais-empresa" class="lista-cartoes" aria-live="polite">
+                    <p class="carregando">Carregando seus locais...</p>
+                </div>
+
+                <aside class="pilha">
+                    <section class="painel-mensagens" aria-labelledby="titulo-msgs">
+                        <span data-icone="baloes" class="icone-marca"></span>
+                        <h2 id="titulo-msgs">Mensagens dos usuários</h2>
+                        <p class="texto-pequeno">Acompanhe as perguntas sobre seu local e ajude as pessoas a planejar a visita.</p>
+                        <div id="ultima-mensagem" class="previa-mensagem">Carregando...</div>
+                        <a href="mensagens.html" class="btn btn--primario btn--bloco"><span data-icone="seta-direita"></span> Abrir caixa de mensagens</a>
+                    </section>
+                    <section class="cartao">
+                        <h2>Seu cadastro, sempre atualizado</h2>
+                        <p class="texto-pequeno">Revise a descrição e a foto sempre que algo mudar no local. Informações claras ajudam as pessoas a planejar a visita com segurança.</p>
+                    </section>
+                </aside>
+            </div>
+        </div>
+
+        <div data-modo="cadastro" data-titulo="Cadastre seu local" data-nav="cadastrar-local" hidden>
+            <div class="linha-voltar">
+                <a href="meus-locais.html" class="link-voltar"><span data-icone="seta-esquerda"></span> Voltar</a>
+                <span class="trilha">SenseWay / Área da empresa</span>
+            </div>
+
+            <div class="topo-pagina topo-pagina--empresa">
+                <span class="sobretitulo">Área da empresa</span>
+                <h1 id="titulo-pagina">Cadastre seu local</h1>
+                <p>Conte como é o espaço e adicione uma foto para ajudar os usuários a conhecê-lo.</p>
+            </div>
+
+            <div class="layout-2-1">
+                <section class="cartao" aria-labelledby="titulo-info">
+                    <div class="previa-cabecalho">
+                        <h2 id="titulo-info">Informações do local</h2>
+                        <span class="selo selo--lilas"><span data-icone="info"></span> <span id="status-local">Ainda não publicado</span></span>
+                    </div>
+                    <form id="form-local" class="formulario" action="#" method="post" enctype="multipart/form-data">
+                        <input type="hidden" id="id" name="id">
+                        <div class="campo">
+                            <label for="nome">Nome do local</label>
+                            <input type="text" id="nome" name="nome" placeholder="Ex.: Vila Jambolão" required>
+                        </div>
+                        <div class="campos-duplos">
+                            <div class="campo">
+                                <label for="categoria">Categoria</label>
+                                <select id="categoria" name="categoria" required>
+                                    <option value="">Escolha</option>
+                                    <option>Hospedagem</option>
+                                    <option>Alimentação</option>
+                                    <option>Lazer</option>
+                                    <option>Cultura</option>
+                                    <option>Comércio</option>
+                                    <option>Serviços</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" id="cidade" name="cidade" placeholder="Ex.: Botucatu, SP" required>
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <label for="descricao">Descrição do local</label>
+                            <textarea id="descricao" name="descricao" rows="6" placeholder="Conte como é o ambiente e como é o acesso" required></textarea>
+                            <p class="dica">Descreva o ambiente e informe as condições de acesso com clareza.</p>
+                        </div>
+                        <fieldset>
+                            <legend>Recursos de acessibilidade</legend>
+                            <div class="opcoes-checkbox">
+                                <label><input type="checkbox" name="recursos" value="Acesso para cadeirantes"> Acesso para cadeirantes</label>
+                                <label><input type="checkbox" name="recursos" value="Banheiro adaptado"> Banheiro adaptado</label>
+                                <label><input type="checkbox" name="recursos" value="Elevador"> Elevador</label>
+                                <label><input type="checkbox" name="recursos" value="Ambiente silencioso"> Ambiente silencioso</label>
+                                <label><input type="checkbox" name="recursos" value="Iluminação suave"> Iluminação suave</label>
+                                <label><input type="checkbox" name="recursos" value="Sinalização acessível"> Sinalização acessível</label>
+                            </div>
+                        </fieldset>
+                        <div class="campo">
+                            <span class="rotulo">Foto do local</span>
+                            <label for="foto" class="dropzone" id="dropzone">
+                                <span data-icone="upload"></span>
+                                <span id="texto-dropzone">Arraste uma foto ou escolha um arquivo</span>
+                                <input type="file" id="foto" name="foto" accept="image/*">
+                            </label>
+                        </div>
+                        <p class="mensagem-form" data-mensagem role="alert"></p>
+                        <div class="grupo-botoes">
+                            <button type="submit" class="btn btn--primario">Publicar local</button>
+                            <a href="meus-locais.html" class="btn btn--secundario">Cancelar</a>
+                        </div>
+                    </form>
                 </section>
-                <section class="cartao">
-                    <h2>Seu cadastro, sempre atualizado</h2>
-                    <p class="texto-pequeno">Revise a descrição e a foto sempre que algo mudar no local. Informações claras ajudam as pessoas a planejar a visita com segurança.</p>
-                </section>
-            </aside>
+
+                <aside class="pilha">
+                    <section class="cartao previa-local" aria-labelledby="titulo-previa">
+                        <div class="previa-cabecalho">
+                            <h2 id="titulo-previa">Prévia do local</h2>
+                            <span data-icone="olho" class="icone-marca"></span>
+                        </div>
+                        <img id="previa-foto" alt="Prévia da foto do local">
+                        <h3 id="previa-nome">Nome do local</h3>
+                        <p id="previa-descricao" class="texto-pequeno">A descrição aparece aqui enquanto você digita.</p>
+                        <p class="texto-pequeno texto-marca espaco-acima">Prévia antes da publicação</p>
+                    </section>
+                    <section class="painel-mensagens">
+                        <span data-icone="lampada" class="icone-marca"></span>
+                        <h2>Informar também é acolher</h2>
+                        <p class="texto-pequeno">Detalhes como degraus, iluminação e nível de ruído ajudam as pessoas a decidir se o local é confortável para elas.</p>
+                    </section>
+                </aside>
+            </div>
         </div>
     </main>
 
-    <script type="module" src="../js/paginas/meus-locais.js"></script>
+    <script type="module" src="../js/app.js"></script>
 </body>
 </html>

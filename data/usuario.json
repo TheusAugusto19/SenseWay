@@ -1,9 +1,0 @@
-{
-  "id": 1,
-  "nome": "João Heitor Silva",
-  "email": "joao.h@gmail.com",
-  "dataNascimento": "2000-10-25",
-  "tutor": false,
-  "foto": null,
-  "tutelados": []
-}
