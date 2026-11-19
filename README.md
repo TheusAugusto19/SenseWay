@@ -122,3 +122,4 @@ senseWay-front-end-atualiza(versão X.Y)
 | Versão | O que mudou |
 |---|---|
 | 1.0 | Código enxugado (50 → 16 arquivos), banco simulado em um JSON, cliques e transições suaves, menu com ajuda "?" |
+| 1.1 | Caixa obrigatória "Li e concordo com os Termos de uso e a Política de privacidade" nos cadastros de usuário e de empresa |

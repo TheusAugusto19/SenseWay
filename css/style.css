@@ -704,13 +704,39 @@ input[type='checkbox'] {
   color: var(--cor-sucesso);
 }
 
-.texto-legal {
-  font-size: 12px;
+/* "Li e concordo com os termos" (obrigatório nos cadastros) */
+.aceite {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-campo);
+  font-size: 13px;
   color: var(--cor-texto-suave);
+  cursor: pointer;
+  transition: border-color 0.2s var(--curva-suave), background-color 0.2s var(--curva-suave);
 }
 
-.texto-legal a {
+.aceite input {
+  margin-top: 2px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.aceite a {
   text-decoration: underline;
+}
+
+.aceite:hover,
+.aceite:has(input:checked) {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-lilas);
+}
+
+.aceite:has(input:checked) {
+  color: var(--cor-texto);
 }
 
 /* Nota em estrelas, só com HTML + CSS.

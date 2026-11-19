@@ -113,11 +113,18 @@ async function login(email, senha) {
   return buscarUsuario();
 }
 
-async function cadastrarUsuario({ confirmarSenha, ...dados }) {
+// Aceite dos termos: obrigatório no cadastro. O back-end guarda a data do aceite.
+function exigirAceite(aceiteTermos) {
+  if (aceiteTermos !== 'sim') throw new Error('Para criar a conta, marque que leu e concorda com os Termos de uso e a Política de privacidade.');
+  return { aceitouTermos: true, aceitouTermosEm: agoraIso() };
+}
+
+async function cadastrarUsuario({ confirmarSenha, aceiteTermos, ...dados }) {
   exigir(dados.nome, 'Informe o nome.');
   if (dados.senha !== confirmarSenha) throw new Error('As senhas não conferem.');
-  if (!MOCK) return chamarApi('/usuarios', { metodo: 'POST', corpo: dados });
-  const { senha, ...perfil } = dados; // a senha nunca é guardada no navegador
+  const corpo = { ...dados, ...exigirAceite(aceiteTermos) };
+  if (!MOCK) return chamarApi('/usuarios', { metodo: 'POST', corpo });
+  const { senha, ...perfil } = corpo; // a senha nunca é guardada no navegador
   alterarMemoria((m) => {
     m.usuario = { ...m.usuario, ...perfil, tutor: perfil.tutor === 'sim' };
     m.sessao = { tipo: 'usuario' };
@@ -238,11 +245,12 @@ async function loginEmpresa(email, senha) {
   alterarMemoria((m) => { m.sessao = { tipo: 'empresa' }; });
 }
 
-async function cadastrarEmpresa(dados) {
+async function cadastrarEmpresa({ aceiteTermos, ...dados }) {
   exigir(dados.nome, 'Informe o nome do local.');
   if (!dados.senha || dados.senha.length < 8) throw new Error('A senha precisa ter pelo menos 8 caracteres.');
-  if (!MOCK) return chamarApi('/empresas', { metodo: 'POST', corpo: dados });
-  const { senha, ...perfil } = dados;
+  const corpo = { ...dados, ...exigirAceite(aceiteTermos) };
+  if (!MOCK) return chamarApi('/empresas', { metodo: 'POST', corpo });
+  const { senha, ...perfil } = corpo;
   alterarMemoria((m) => {
     m.empresa = { ...m.empresa, ...perfil };
     m.sessao = { tipo: 'empresa' };
